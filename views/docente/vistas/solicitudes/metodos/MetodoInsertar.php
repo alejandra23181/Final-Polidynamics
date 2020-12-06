@@ -1,5 +1,10 @@
 <?php
-    include('C:\xampp\htdocs\PoliDynamics\database\db.php');
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'id15586349_root');
+define('DB_PASSWORD', 'AlejandraMontoya123.');
+define('DB_NAME', 'id15586349_polidynamics');
+ 
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
     $descripcion =$_POST['descripcion'];
     $fecha =$_POST['fecha'];
@@ -13,22 +18,32 @@
     && !empty($categoria) && !empty($aula) && !empty($estado)) {
 
         if($descripcion != null || $fecha != null || $hora != null || $usuario != null ||
+        
         $categoria != null || $aula != null || $estado != null ){
-            $QuerySQL = "INSERT INTO solicitud (ID_SOLICITUD, DESCRIPCION, FECHA_CREACION, HORA, USUARIO, CATEGORIA, AULA, ESTADO)
-            VALUES (NULL, '".$descripcion."', '".$fecha."', '".$hora."', '".$usuario."', '".$categoria."', '".$aula."', '".$estado."')";
+
+            
+            $usuario1 = mysqli_query($link,"SELECT * FROM USUARIO WHERE username = '".$usuario."'");
+
+            while ($registro = $usuario1->fetch_assoc())
+            {
+                $usuario2 = $registro['ID_USUARIO'];
+            }
+
+            $QuerySQL = "INSERT INTO SOLICITUD (ID_SOLICITUD, DESCRIPCION, FECHA_CREACION, HORA, USUARIO, CATEGORIA, AULA, ESTADO)
+            VALUES (NULL, '".$descripcion."', '".$fecha."', '".$hora."', '".$usuario2."', '".$categoria."', '".$aula."', '".$estado."')";
 
             if (mysqli_query($link,$QuerySQL)){
                 header('location: ../ListarSolicitudes.php');
                 mysqli_query($link,"INSERT INTO AUDITORIA (USUARIO, FECHA, TABLA, OPERACION, DESCRIPCION)
-                VALUES ('".$usuario."', NOW(), 'SOLICITUDES', 'INSERTAR', 'SE REALIZO LA INSERCIÓN DE UNA SOLICITUD' )");
+                VALUES ('".$usuario2."', NOW(), 'SOLICITUDES', 'INSERTAR', 'SE REALIZO LA INSERCIÓN DE UNA SOLICITUD' )");
                 } else {
-                    header('location: ../Error.php');
+                   echo "1";
                 }
 
         }else{
-            header('location: ../Error.php');
+            echo "2";
         }
     }else{
-        header('location: ../Error.php');
+        echo "3";
     }
 ?>

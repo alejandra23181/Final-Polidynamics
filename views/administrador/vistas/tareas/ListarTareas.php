@@ -10,14 +10,25 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
 
 <?php 
-    include('C:\xampp\htdocs\polidynamics\database\db.php');    
-    $Query = "SELECT * FROM tarea TA
-    INNER JOIN SOLICITUD SO ON TA.SOLICITUD = SO.ID_SOLICITUD
-    INNER JOIN TIPO_TAREA TP ON TA.TIPO_TAREA = TP.ID_TIPO_TAREA 
-    INNER JOIN USUARIO US ON SO.USUARIO = US.ID_USUARIO
-    INNER JOIN ESTADO ES ON SO.ESTADO = ES.ID_ESTADO
-    WHERE username = '".$_SESSION['username']."' ";
-	$Resultado = mysqli_query($link, $Query);
+
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'id15586349_root');
+define('DB_PASSWORD', 'AlejandraMontoya123.');
+define('DB_NAME', 'id15586349_polidynamics');
+ 
+
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+
+$Query = "SELECT * FROM TAREA TA
+INNER JOIN SOLICITUD SO ON TA.SOLICITUD = SO.ID_SOLICITUD
+INNER JOIN TIPO_TAREA TP ON TA.TIPO_TAREA = TP.ID_TIPO_TAREA 
+INNER JOIN USUARIO US ON SO.USUARIO = US.ID_USUARIO
+WHERE TA.USUARIO = '".$_SESSION['username']."' ";
+
+$Resultado = mysqli_query($link, $Query);
+    
+
 ?>
  
 <!DOCTYPE html>
@@ -94,18 +105,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</tr>
 		</thead>
 		<tbody>
+
 			<?php while($Filas = $Resultado->fetch_assoc()) {	
 
 			?>
+      
 			<tr>
 				<th scope="row"><?php echo $Filas['ID_TAREA'] ?></th>
-                <td><?php echo $Filas['SOLICITUD'] ?></td>
+        <td><?php echo $Filas['SOLICITUD'] ?></td>
 				<td><?php echo $Filas['DETALLE'] ?></td>
 				<td><?php echo $Filas['DESCRIPCION_TAREA'] ?></td>
 				<td><?php echo $Filas['FECHA_INICIO'] ?></td>
-                <td><?php echo $Filas['HORA_INICIO'] ?></td>
-                <td><?php echo $Filas['HORA_FINAL'] ?></td>
-                <td>
+        <td><?php echo $Filas['HORA_INICIO'] ?></td>
+        <td><?php echo $Filas['HORA_FINAL'] ?></td>
+        <td>
 					<button type="button" class="btn btn-primary" ><a href="EditarTareas.php?ID_TAREA=<?php echo $Filas['ID_TAREA'] ?>">Modificar</a></button>
 					<button type="button" class="btn btn-danger" ><a href="metodos/MetodoEliminar.php?ID_TAREA=<?php echo $Filas['ID_TAREA'] ?>">Desactivar</a></button>			
 				</td>

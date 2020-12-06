@@ -10,8 +10,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
 
 <?php 
-    include('C:\xampp\htdocs\polidynamics\database\db.php');    
-    $Query = "SELECT *
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'id15586349_root');
+define('DB_PASSWORD', 'AlejandraMontoya123.');
+define('DB_NAME', 'id15586349_polidynamics');
+ 
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);    
+$Query = "SELECT *
 	FROM SOLICITUD SO
 	INNER JOIN USUARIO US ON SO.USUARIO = US.ID_USUARIO
 	INNER JOIN CATEGORIA CA ON SO.CATEGORIA = CA.ID_CATEGORIA
@@ -45,7 +50,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <li ><a href="\PoliDynamics\views\docente\vistas\ListarAuditoria.php"> Auditoria</a></li>
       <li ><a href="\PoliDynamics\views\docente\vistas\ListarReportes.php"> Reportes</a></li>
       <li><a href="\PoliDynamics\views\docente\vistas\ManualUsuario.php"> Manual de usuario</a></li>     
-      <li><a href="/polidynamics/views/login/Login.php"> Cerrar sesión</a></li>
+      <li><a href="\PoliDynamics\Index.php"> Cerrar sesión</a></li>
     </ul>
   </div>
 </nav>
@@ -93,8 +98,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <label>Hora esperada:</label><br>   
                     <input type="time" class="form-control" name="hora" required>
                     </div>
-                    <input  type="hidden" name="usuario" value="<?php echo htmlspecialchars($_SESSION["id"]); ?>">
-
+                    <input  type="hidden" name="usuario" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>">
                     <div class="col-md-6 mb-3">
 
                     <label>Categoria:</label><br>

@@ -3,105 +3,54 @@
 session_start();
  
 
+
  
 // Include config file
-require_once 'C:\xampp\htdocs\polidynamics\database\db.php';
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'id15586349_root');
+define('DB_PASSWORD', 'AlejandraMontoya123.');
+define('DB_NAME', 'id15586349_polidynamics');
  
-// Define variables and initialize with empty values
-$username = $password = "";
-$username_err = $password_err = "";
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+if(isset($_POST['username']) && isset($_POST['password']) && !empty($_POST['username']) && !empty($_POST['password'])){
+$username = mysqli_real_escape_string($link,$_POST['username']);
+    $password = mysqli_real_escape_string($link,$_POST['password']);
  
-// Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $sql = mysqli_query($link,"SELECT ID_USUARIO, username, PERFIL ,password FROM USUARIO WHERE username='$username' AND password='$password' ");
  
-    // Check if username is empty
-    if(empty(trim($_POST["username"]))){
-        $username_err = "Por favor ingrese su usuario.";
-    } else{
-        $username = trim($_POST["username"]);
-    }
-    
-    // Check if password is empty
-    if(empty(trim($_POST["password"]))){
-        $password_err = "Por favor ingrese su contraseña.";
-    } else{
-        $password = trim($_POST["password"]);
-    }
-    
-    // Validate credentials
-    if(empty($username_err) && empty($password_err)){
-        // Prepare a select statement
-        $sql = "SELECT ID_USUARIO, username, PERFIL ,password FROM usuario WHERE username = ?";
+    if(mysqli_num_rows($sql)===1) {
+ 
+       $_SESSION['loggedin']=true; //esta conectado//
+       $_SESSION['username']=$username;
+       $perm = array();
+       while ($registro = $sql->fetch_assoc())
+       {
+           $perm[] = $registro['PERFIL'];
+       }
+
+
+
+       if($perm[0]==1){
         
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_username);
+        $_SESSION['loggedin']=true; //esta conectado//
+        $_SESSION['username']=$username;
+        header('location: /PoliDynamics/views/docente/Index.php');
             
-            // Set parameters
-            $param_username = $username;
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                // Store result
-                mysqli_stmt_store_result($stmt);
-                
-                // Check if username exists, if yes then verify password
-                if(mysqli_stmt_num_rows($stmt) == 1){                    
-                    // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $perfil,$hashed_password);
-                    if(mysqli_stmt_fetch($stmt)){
-                        if($password){
-                            if($perfil ==1){
-                                 // Password is correct, so start a new session
-                                 session_start();
-                                
-                                 // Store data in session variables
-                                 $_SESSION["loggedin"] = true;
-                                 $_SESSION["id"] = $id;
-                                 $_SESSION["perfil"] = $perfil;
-                                 $_SESSION["username"] = $username;                            
-                                 
-                                 // Redirect user to welcome page
-                                 header('location: \polidynamics\views\docente\Index.php');
-                            }else if($perfil ==2){
-                                 // Password is correct, so start a new session
-                                 session_start();
-                                
-                                 // Store data in session variables
-                                 $_SESSION["loggedin"] = true;
-                                 $_SESSION["id"] = $id;
-                                 $_SESSION["perfil"] = $perfil;
-                                 $_SESSION["username"] = $username;                            
-                                 
-                                 // Redirect user to welcome page
-                                 header('location: \polidynamics\views\administrador\Index.php');
-                            }else{
-                                echo "Ha ocurrido un error con tu usuario, por favor verifica";
-                            }                     
-                            
-                        } else{
-                            // Display an error message if password is not valid
-                            $password_err = "La contraseña que has ingresado no es válida.";
-                        }
-                    }
-                } else{
-                    // Display an error message if username doesn't exist
-                    $username_err = "No existe cuenta registrada con ese nombre de usuario.";
-                }
-            } else{
-                echo "Algo salió mal, por favor vuelve a intentarlo.";
-            }
-        }
+       }elseif($perm[0]==2){
         
-        // Close statement
-        mysqli_stmt_close($stmt);
+        $_SESSION['loggedin']=true; //esta conectado//
+        $_SESSION['username']=$username;
+        header('location: /PoliDynamics/views/administrador/Index.php');
+       }else{
+           echo "pailas";
+       }
     }
-    
-    // Close connection
-    mysqli_close($link);
 }
+
 ?>
  
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,13 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href=/PoliDynamics/style/blog.css" rel="stylesheet">  
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <link href="/PoliDynamics/style/Login.css" rel="stylesheet">  
-
-
+    <link href=/PoliDynamics/style/blog.css" rel="stylesheet">
 </head>
 <body>
     
@@ -134,15 +77,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="contenedor">
             <div id="marca">
 
-            <h1><span class="resaltado"> Poli </span> Dynamics</h1>
+            <h1 style="
+    color: white;
+"><span class="resaltado"> Poli </span> Dynamics</h1>
         </div>
 
         <nav>
             <ul>
-                <li ><a href="\PoliDynamics\Index.php">Inicio</a></li>
+            <li ><a href="\PoliDynamics\Index.php">Inicio</a></li>
                 <li><a href="\PoliDynamics\secciones\nosotros.php">Acerca de nosotros</a></li>
                 <li><a href="\PoliDynamics\secciones\servicios.php">Nuestros servicios</a></li>
-                <li><a href="\PoliDynamics\secciones\clientes.php">A quien servimos</a></li>
+                <li ><a href="\PoliDynamics\secciones\clientes.php">A quien servimos</a></li>
+                <li><a href="\PoliDynamics\secciones\disponibilidad.php">Disponibilidad aulas</a></li>
                 <li class="actual"><a href="\PoliDynamics\views\login\Login.php">Inicio de sesión</a></li>
             </ul>
         </nav>
@@ -150,22 +96,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </header>
 
 
-    <h1 style="font-size: 23px;
+    <h1 style="font-size: 28px;
     margin-top: 100px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
     color: #196F3D;font-weight: bold;">Inicio de sesión</h1>
-    <div class="container" style="margin-top: -129px;">
-        <form  class="form-signin" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+    <div class="container" style="margin-top: -140px;">
+        <form  class="form-signin" method="post">
+            <div class="form-group ">
                 <label>Usuario:</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
+                <input type="text" name="username"  class="form-control" require>
+                <span class="help-block"></span>
             </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group ">
                 <label>Clave:</label>
-                <input type="password" name="password" class="form-control">
-                <span class="help-block"><?php echo $password_err; ?></span>
+                <input type="password"   name="password" class="form-control" require>
+                <span class="help-block"></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" style="margin-left: 360px;margin-top: 30px;background: #196844;" value="Ingresar">
@@ -173,7 +119,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </form>
     </div>    
 </body>
-    </body>
-
-
 </html>

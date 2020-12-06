@@ -10,9 +10,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
 
 <?php 
-    include('C:\xampp\htdocs\polidynamics\database\db.php'); 
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'id15586349_root');
+define('DB_PASSWORD', 'AlejandraMontoya123.');
+define('DB_NAME', 'id15586349_polidynamics');
+ 
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
     $id = $_GET['ID_TAREA'];   
-    $Query = "SELECT * FROM tarea TA
+    $Query = "SELECT * FROM TAREA TA
     INNER JOIN SOLICITUD SO ON TA.SOLICITUD = SO.ID_SOLICITUD
     INNER JOIN TIPO_TAREA TP ON TA.TIPO_TAREA = TP.ID_TIPO_TAREA 
     INNER JOIN USUARIO US ON SO.USUARIO = US.ID_USUARIO
@@ -108,6 +113,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </div>
         </div>
 
+        <input  type="hidden" name="usuario" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>">
 
         <div class="form-group">
             <div class="row">

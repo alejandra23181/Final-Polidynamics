@@ -10,31 +10,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
 
 <?php
-include('C:\xampp\htdocs\polidynamics\database\db.php');
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'id15586349_root');
+define('DB_PASSWORD', 'AlejandraMontoya123.');
+define('DB_NAME', 'id15586349_polidynamics');
+ 
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-date_default_timezone_set("America/Mexico_city");
-$fecha_actual=date("Y-m-d H:i:s");
-@$ID_USUARIO=$_GET['ID'];
-$consulta="SELECT * FROM usuario WHERE ID_USUARIO = '$ID_USUARIO'";
-$ejecutar = mysqli_query($link, $consulta);
-
-while($row=mysqli_fetch_array($ejecutar)){
-    
-    $ID_USUARIO=$row[0];
-    $PRIMER_NOMBRE_USUARIO=$row[1];
-    $SEGUNDO_NOMBRE_USUARIO=$row[2];
-    $PRIMER_APELLIDO_USUARIO=$row[3];
-    $SEGUNDO_APELLIDO_USUARIO=$row[4];
-    $TELEFONO=$row[5];
-    $EMAIL=$row[6];
-    $TIPO_DOCUMENTO=$row[7];
-    $IDENTIFICACION=$row[8];
-    $GENERO=$row[9];
-    $PERFIL=$row[10];
-    $username=$row[11];
-    $password=$row[12];
-
-}
 
 $Query = "SELECT * FROM USUARIO US
 INNER JOIN GENERO GE ON US.GENERO = GE.ID_GENERO
@@ -101,7 +83,6 @@ $ejecutar = mysqli_query($link,$Query);
 
   <h1>CREACIÓN DE USUARIOS</h1>
   <br>
-  <input type="hidden" name="ID_USUARIO" id="ID_USUARIO" value="<?php echo $ID_USUARIO?>"> 
 
   <form action="metodos/MetodoInsertar.php" method="POST" accept-charset="utf-8">
         

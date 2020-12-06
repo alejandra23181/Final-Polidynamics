@@ -25,16 +25,17 @@
         <div class="contenedor">
             <div id="marca">
 
-            <h1><span class="resaltado"> Poli </span> Dynamics</h1>
+            <h1 style="font-size: 25px;margin-top: 3px;margin-left: -2px;"><span class="resaltado"> Poli </span> Dynamics</h1>
         </div>
 
         <nav>
             <ul>
-                <li class="actual"><a href="\PoliDynamics\Index.php">Inicio</a></li>
-                <li><a href="\PoliDynamics\secciones\nosotros.php">Acerca de nosotros</a></li>
-                <li><a href="\PoliDynamics\secciones\servicios.php">Nuestros servicios</a></li>
-                <li><a href="\PoliDynamics\secciones\clientes.php">A quien servimos</a></li>
-                <li><a href="\PoliDynamics\views\login\Login.php">Inicio de sesión</a></li>
+                <li style="font-size: 16px;" class="actual"><a href="\PoliDynamics\Index.php">Inicio</a></li>
+                <li style="font-size: 16px;"><a href="\PoliDynamics\secciones\nosotros.php">Acerca de nosotros</a></li>
+                <li style="font-size: 16px;"><a href="\PoliDynamics\secciones\servicios.php">Nuestros servicios</a></li>
+                <li style="font-size: 16px;"><a href="\PoliDynamics\secciones\clientes.php">A quien servimos</a></li>
+                <li style="font-size: 16px;"><a href="\PoliDynamics\secciones\disponibilidad.php">Disponibilidad aulas</a></li>
+                <li style="font-size: 16px;"><a href="\PoliDynamics\views\login\Login.php">Inicio de sesión</a></li>
 </ul>
         </nav>
         </div>
@@ -69,36 +70,11 @@
     </br>
 
 
-    <div class="row mb-2">
-      <div class="col-md-5">
+      
+    <h1><strong><center style="color: FF5733;">EN CONSTRUCCIÓN</center></strong></h8>
 
-          <div class= "row no-gutters border rounded overflow-hidden flex-md-row mb-7 shadow-sm h-md-2">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-primary">Administrativos</strong>
-              <h3 class="mb-0">Guías para técnicos</h3>
-              <div class="mb-1 text-muted">En proceso</div>
-              <p class="card-text mb-auto">En este articulo podrás conocer como hacer uso de la plataforma de administrativos este de manera fácil y sencilla.</p>
-              <a href="#" class="stretched-link">Continuar leyendo</a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
-            </div>
-        </div>
-        </div>
-        <div class="col-md-5">
-            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250">
-              <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">Comunidad</strong>
-                <h3 class="mb-0">Guías para docentes</h3>
-                <div class="mb-1 text-muted">En proceso</div>
-                <p class="card-text mb-auto">En este articulo podrás conocer como hacer uso de la plataforma de docentes este de manera fácil y sencilla.</p>
-                <a href="#" class="stretched-link">Continuar leyendo</a>
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
-              </div>
-            </div>
-          </div>
+
+          
     </body>
 
 

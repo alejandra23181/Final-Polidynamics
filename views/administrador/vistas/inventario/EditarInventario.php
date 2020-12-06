@@ -10,7 +10,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
 
 <?php
-    include('C:\xampp\htdocs\polidynamics\database\db.php');
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'id15586349_root');
+define('DB_PASSWORD', 'AlejandraMontoya123.');
+define('DB_NAME', 'id15586349_polidynamics');
+ 
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
     $id = $_GET['ID_INVENTARIO'];              
     $QuerySQL = "SELECT * FROM INVENTARIO WHERE ID_INVENTARIO = '".$id."'";
     $Resultado = mysqli_query($link, $QuerySQL);
@@ -83,7 +88,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </div>
                     <div class="col-md-6 mb-3">
                         <label>Cantidad:</label><br>   
-                        <input type="text" class="form-control" name="cantidad" value="<?php echo $Filas['CANTIDAD'] ?>">
+                        <input type="number" class="form-control" name="cantidad" value="<?php echo $Filas['CANTIDAD'] ?>">
 
                     </div>
             </div>
