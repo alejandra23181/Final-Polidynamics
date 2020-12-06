@@ -88,8 +88,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<th scope="col">Tipo de tarea</th>
 				<th scope="col">Fecha de solución</th>
 				<th scope="col">Hora inicio</th>
-                <th scope="col">Hora fin</th>
-                <th scope="col">Acciones</th>
+        <th scope="col">Hora fin</th>
+        <th scope="col">Acciones</th>
 
 			</tr>
 		</thead>
