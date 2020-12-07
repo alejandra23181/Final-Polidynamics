@@ -35,7 +35,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <li ><a href="\PoliDynamics\views\administrador\vistas\ListarAuditoria.php"> Auditoria</a></li>
       <li><a href="\PoliDynamics\views\administrador\vistas\ListarReportes.php"> Reportes</a></li>
       <li><a href="\PoliDynamics\views\administrador\vistas\ManualTecnico.php"> Manual de usuario</a></li>     
-      <li><a href="/polidynamics/views/login/Login.php"> Cerrar sesión</a></li>
+      <li><a href="\PoliDynamics\Index.php"> Cerrar sesión</a></li>
       
     </ul>
   </div>
@@ -57,10 +57,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
   </div>
 
-    
-  <div class="content">
-    
-  </div>
+  <h1 style="text-transform: uppercase;">BIENVENID@ <?php echo htmlspecialchars($_SESSION["username"]); ?></h1>
+
+  <img style="margin-top: 24px;margin-left: 388px;" src="\PoliDynamics\img\home.jpg">
+
+ 
 </section>
 
 </body>

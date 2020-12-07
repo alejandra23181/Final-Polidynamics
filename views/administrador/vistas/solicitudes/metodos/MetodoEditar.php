@@ -10,8 +10,6 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
     $descripcion = $_GET['descripcion'];
     $fecha =  $_GET['fecha'];
     $hora =  $_GET['hora'];
-    $categoria =  $_GET['categoria'];
-    $aula =  $_GET['aula'];
     $estado =  $_GET['estado'];
 
     $Query = "UPDATE SOLICITUD SET  DESCRIPCION = '".$descripcion."', FECHA_CREACION = '".$fecha."',
@@ -21,3 +19,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
     header('location: ../ListarSolicitudes.php');
     
 ?>
+
+
+
+

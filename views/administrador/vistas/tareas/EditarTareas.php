@@ -15,13 +15,16 @@ define('DB_USERNAME', 'id15586349_root');
 define('DB_PASSWORD', 'AlejandraMontoya123.');
 define('DB_NAME', 'id15586349_polidynamics');
  
+ 
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
     $id = $_GET['ID_TAREA'];   
     $Query = "SELECT * FROM TAREA TA
     INNER JOIN SOLICITUD SO ON TA.SOLICITUD = SO.ID_SOLICITUD
     INNER JOIN TIPO_TAREA TP ON TA.TIPO_TAREA = TP.ID_TIPO_TAREA 
     INNER JOIN USUARIO US ON SO.USUARIO = US.ID_USUARIO
-	INNER JOIN ESTADO ES ON SO.ESTADO = ES.ID_ESTADO WHERE username = '".$_SESSION['username']."' AND ID_TAREA = '".$id."'";
+	INNER JOIN ESTADO ES ON SO.ESTADO = ES.ID_ESTADO
+	WHERE TA.USUARIO = '".$_SESSION['username']."' AND ID_TAREA = '".$id."'";
     $Resultado = mysqli_query($link, $Query);
     while($Filas = $Resultado->fetch_assoc()) {	
 ?>
@@ -53,7 +56,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
       <li ><a href="\PoliDynamics\views\administrador\vistas\ListarAuditoria.php"> Auditoria</a></li>
       <li><a href="\PoliDynamics\views\administrador\vistas\ListarReportes.php"> Reportes</a></li>
       <li><a href="\PoliDynamics\views\administrador\vistas\ManualTecnico.php"> Manual de usuario</a></li>     
-      <li><a href="/polidynamics/views/login/Login.php"> Cerrar sesión</a></li>
+      <li><a href="\PoliDynamics\Index.php"> Cerrar sesión</a></li>
       
     </ul>
 
@@ -113,7 +116,6 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             </div>
         </div>
 
-        <input  type="hidden" name="usuario" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>">
 
         <div class="form-group">
             <div class="row">

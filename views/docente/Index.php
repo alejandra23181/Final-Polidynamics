@@ -56,9 +56,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       </div>
     </div>
   </div>
-  <div class="content">
-    
-    </div>
+
+
+  <h1 style="text-transform: uppercase;">BIENVENID@ <?php echo htmlspecialchars($_SESSION["username"]); ?></h1>
+
+  <img style="margin-top: 24px;margin-left: 388px;" src="\PoliDynamics\img\home.jpg">
+
     </section>
 
 

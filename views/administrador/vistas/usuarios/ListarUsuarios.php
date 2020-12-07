@@ -50,7 +50,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <li ><a href="\PoliDynamics\views\administrador\vistas\ListarAuditoria.php"> Auditoria</a></li>
       <li><a href="\PoliDynamics\views\administrador\vistas\ListarReportes.php"> Reportes</a></li>
       <li><a href="\PoliDynamics\views\administrador\vistas\ManualTecnico.php"> Manual de usuario</a></li>     
-      <li><a href="/polidynamics/views/login/Login.php"> Cerrar sesión</a></li>
+      <li><a href="\PoliDynamics\Index.php"> Cerrar sesión</a></li>
       
     </ul>
 
