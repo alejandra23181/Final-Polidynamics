@@ -80,15 +80,15 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
   <form  action = "metodos/MetodoEditar.php">
         <div class="form-group">
-        <input type="hidden" name="idinventario" value="<?php echo $Filas['ID_INVENTARIO'] ?>">
+        <input type="hidden" name="idinventario" value="<?php echo $Filas['ID_INVENTARIO'] ?>" >
             <div class="row">
                     <div class="col-md-6 mb-3">
                         <label>Referencia:</label><br>   
-                        <input type="text" class="form-control" name="referencia" value="<?php echo $Filas['REFERENCIA'] ?>">   
+                        <input type="text" class="form-control" name="referencia" value="<?php echo $Filas['REFERENCIA'] ?>" required>   
                     </div>
                     <div class="col-md-6 mb-3">
                         <label>Cantidad:</label><br>   
-                        <input type="number" class="form-control" name="cantidad" value="<?php echo $Filas['CANTIDAD'] ?>">
+                        <input type="number" class="form-control" name="cantidad" value="<?php echo $Filas['CANTIDAD'] ?>" required>
 
                     </div>
             </div>
@@ -98,7 +98,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                     <div class="col-md-6 mb-3">
                     <label>Detalle entrada:</label><br>   
-                    <input type="text" class="form-control" name="detalle_entrada" value="<?php echo $Filas['DETALLE_ENTRADA'] ?>">
+                    <input type="text" class="form-control" name="detalle_entrada" value="<?php echo $Filas['DETALLE_ENTRADA'] ?>" required>
            </div>
     <br>
     <button class="btn btn-primary" type="submit"><strong> Actualizar inventario</strong></button>

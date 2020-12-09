@@ -89,7 +89,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                     <div class="col-md-6 mb-3">
                         <label>Segundo nombre:</label><br>   
-                        <input type="text" class="form-control" name="SEGUNDO_NOMBRE_USUARIO" value="<?php echo $Filas['SEGUNDO_NOMBRE_USUARIO'] ?>">   
+                        <input type="text" class="form-control" name="SEGUNDO_NOMBRE_USUARIO" value="<?php echo $Filas['SEGUNDO_NOMBRE_USUARIO'] ?>" >   
                     </div>
            
                     <div class="col-md-6 mb-3">
@@ -104,12 +104,12 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                     <div class="col-md-6 mb-3">
                         <label>Télefono:</label><br>   
-                        <input type="text" name="TELEFONO"  class="form-control" value="<?php echo $Filas['TELEFONO'] ?>">
+                        <input type="number" name="TELEFONO"  class="form-control" value="<?php echo $Filas['TELEFONO'] ?>">
 
                     </div>
                     <div class="col-md-6 mb-3">
                         <label>Email:</label><br>   
-                        <input type="text" name="EMAIL"  class="form-control" value="<?php echo $Filas['EMAIL'] ?>">
+                        <input type="email" name="EMAIL"  class="form-control" value="<?php echo $Filas['EMAIL'] ?>">
 
                     </div>
 

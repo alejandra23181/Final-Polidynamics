@@ -119,7 +119,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
             <div class="col-md-6 mb-3">
                 <label>Solicitud:</label><br>
-                <select name="solicitud" class="form-control">
+                <select name="solicitud" class="form-control" required>
                     <?php 
                         $Query = "SELECT ID_SOLICITUD, DESCRIPCION FROM SOLICITUD";
                         $Resultado = mysqli_query($link, $Query);
@@ -139,7 +139,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                 <div class="col-md-6 mb-3" style="margin-left: -166px;width: 504px;">
                     <label>Tipo de tarea:</label><br>   
-                    <select name="tipotarea" class="form-control">
+                    <select name="tipotarea" class="form-control" required>
                     <?php 
                         $Query = "SELECT ID_TIPO_TAREA, DESCRIPCION_TAREA FROM TIPO_TAREA";
                         $Resultado = mysqli_query($link, $Query);

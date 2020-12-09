@@ -84,11 +84,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                     <div class="col-md-6 mb-3">
                         <label>Fecha prestamo:</label><br>   
-                        <input type="date" name="fecha_prestamo"  class="form-control" value="<?php echo $Filas['FECHA_PRESTAMO'] ?>">
+                        <input type="date" name="fecha_prestamo"  class="form-control" value="<?php echo $Filas['FECHA_PRESTAMO'] ?>" required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label>Fecha esperada prestamo:</label><br>   
-                        <input type="date" name="fecha_esperada"  class="form-control" value="<?php echo $Filas['FECHA_PRESTAMO_ESPERADA'] ?>">
+                        <input type="date" name="fecha_esperada"  class="form-control" value="<?php echo $Filas['FECHA_PRESTAMO_ESPERADA'] ?>" required>
                     </div>
             </div>
         </div>
@@ -97,11 +97,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                     <div class="col-md-6 mb-3">
                     <label>Hora inicio:</label><br>   
-                    <input type="time" name="hora_inicio" class="form-control" value="<?php echo $Filas['HORA_INICIO'] ?>">
+                    <input type="time" name="hora_inicio" class="form-control" value="<?php echo $Filas['HORA_INICIO'] ?>" required>
                     </div>
                     <div class="col-md-6 mb-3">
                     <label>Hora fin:</label><br>   
-                    <input type="time" name="hora_fin" class="form-control" value="<?php echo $Filas['HORA_FIN'] ?>">
+                    <input type="time" name="hora_fin" class="form-control" value="<?php echo $Filas['HORA_FIN'] ?>" required>
                     </div>
                     <input  type="hidden" name="usuario" value="<?php echo $Filas['username'] ?>">
             </div>
@@ -111,7 +111,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                     <div class="col-md-6 mb-3">
                     <label>Aula:</label><br>
-                    <select name="aula" class="form-control">
+                    <select name="aula" class="form-control" required>
                     <option value="<?php echo $Filas['ID_AULA'] ?>" enable selected hidden><?php echo $Filas['NUMERO_AULA'] ?></option>
                         <?php 
                             $Query = "SELECT ID_AULA, NUMERO_AULA FROM AULA";

@@ -112,7 +112,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                     <div class="col-md-6 mb-3">
                     <label>Aula:</label><br>
-                    <select name="aula" class="form-control">
+                    <select name="aula" class="form-control" required>
                         <option value="0">Seleccione una de las opciones:</option>
                         <?php 
                             $Query = "SELECT ID_AULA, NUMERO_AULA FROM AULA";
@@ -125,7 +125,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
                     </div>
                     <div class="col-md-6 mb-3">
                     <label>Solicitud:</label><br>
-                    <select name="solicitud" class="form-control">
+                    <select name="solicitud" class="form-control" required>
                         <option value="0">Seleccione una de las opciones:</option>
                         <?php 
                             $Query = "SELECT ID_SOLICITUD, DESCRIPCION FROM SOLICITUD";

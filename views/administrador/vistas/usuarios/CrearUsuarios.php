@@ -90,13 +90,13 @@ $ejecutar = mysqli_query($link,$Query);
             <div class="row"> 
         <div class="col-md-6 mb-3">
             <label for="PRIMER_NOMBRE_USUARIO">Primer nombre:</label><br>
-            <input class="form-control" type="text" name="PRIMER_NOMBRE_USUARIO" value="" placeholder="">
+            <input class="form-control" type="text" name="PRIMER_NOMBRE_USUARIO" value="" placeholder="" required>
             
             </div>
 
             <div class="col-md-6 mb-3">
             <label for="SEGUNDO_NOMBRE_USUARIO">Segundo nombre:</label><br>
-            <input class="form-control" type="text" name="SEGUNDO_NOMBRE_USUARIO" value="" placeholder="">
+            <input class="form-control" type="text" name="SEGUNDO_NOMBRE_USUARIO" value="" placeholder="" >
             </div>
             </diV>
             </div>
@@ -106,12 +106,12 @@ $ejecutar = mysqli_query($link,$Query);
             <div class="row">
             <div class="col-md-6 mb-3">
             <label for="PRIMER_APELLIDO_USUARIO">Primer apellido:</label><br>
-            <input class="form-control" type="text" name="PRIMER_APELLIDO_USUARIO" value="" placeholder="">
+            <input class="form-control" type="text" name="PRIMER_APELLIDO_USUARIO" value="" placeholder="" required>
             </div>
 
             <div class="col-md-6 mb-3">
             <label for="SEGUNDO_APELLIDO_USUARIO">Segundo apellido:</label><br>
-            <input class="form-control" type="text" name="SEGUNDO_APELLIDO_USUARIO" value="" placeholder="">
+            <input class="form-control" type="text" name="SEGUNDO_APELLIDO_USUARIO" value="" placeholder="" >
            
             </div>
             </diV>
@@ -121,13 +121,13 @@ $ejecutar = mysqli_query($link,$Query);
             <div class="row">
             <div class="col-md-6 mb-3">
             <label for="TELEFONO">Teléfono:</label><br>
-            <input class="form-control" type="text" name="TELEFONO" value="" placeholder="">
+            <input class="form-control" type="number" name="TELEFONO" value="" placeholder="" required>
             
             </div>
 
             <div class="col-md-6 mb-3">
             <label for="EMAIL">Email:</label><br>
-            <input class="form-control" type="text" name="EMAIL" value="" placeholder="">
+            <input class="form-control" type="email" name="EMAIL" value="" placeholder="" required>
             </div>
 
             </div>
@@ -137,7 +137,7 @@ $ejecutar = mysqli_query($link,$Query);
             <div class="row">
             <div class="col-md-6 mb-3">
             <label>Tipo documento:</label> <br>
-                <select class="form-control" name="TIPO_DOCUMENTO" value="">
+                <select class="form-control" name="TIPO_DOCUMENTO" value="" required>
                     <option value="0">Seleccione una de las opciones:</option>
                     <?php 
                         $Query = "SELECT ID_TIPO_DOCUMENTO, DESCRIPCION_TIPO FROM TIPO_DOCUMENTO";
@@ -152,7 +152,7 @@ $ejecutar = mysqli_query($link,$Query);
 
             <div class="col-md-6 mb-3">
             <label for="IDENTIFICACION">Identificación:</label><br>
-            <input class="form-control" type="text" name="IDENTIFICACION" value="" placeholder="">
+            <input class="form-control" type="number" name="IDENTIFICACION" value="" placeholder="" required>
             
             </div>
 
@@ -164,7 +164,7 @@ $ejecutar = mysqli_query($link,$Query);
             <div class="row">
             <div class="col-md-6 mb-3">
             <label>Género:</label><br>
-                <select class="form-control" name="GENERO" value="">
+                <select class="form-control" name="GENERO" value="" required>
                     <option value="0">Seleccione una de las opciones:</option>
                     <?php 
                         $Query = "SELECT ID_GENERO, DESCRIPCION_GENERO FROM GENERO";
@@ -179,7 +179,7 @@ $ejecutar = mysqli_query($link,$Query);
 
             <div class="col-md-6 mb-3">
             <label>Perfil:</label><br>
-                <select class="form-control" name="PERFIL" value="">
+                <select class="form-control" name="PERFIL" value="" required>
                     <option value="0">Seleccione una de las opciones:</option>
                     <?php 
                         $Query = "SELECT ID_PERFIL, DESCRIPCION_PERFIL FROM PERFIL_USUARIO";
@@ -200,13 +200,13 @@ $ejecutar = mysqli_query($link,$Query);
 
             <div class="col-md-6 mb-3">
             <label for="USERNAME">Nombre usuario:</label><br>
-            <input class="form-control" type="text" name="username" value="" placeholder="">
+            <input class="form-control" type="text" name="username" value="" placeholder="" required>
             
             </div>
 
             <div class="col-md-6 mb-3">
             <label for="PASSWORD">Clave:</label>
-            <input class="form-control" type="text" name="password" value="" placeholder="">
+            <input class="form-control" type="text" name="password" value="" placeholder="" required>
             
             </div>
 

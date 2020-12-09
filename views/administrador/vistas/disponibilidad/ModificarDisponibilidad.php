@@ -84,7 +84,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
   <form  action = "metodos/MetodoActualizar.php">
         <div class="form-group">
-        <input type="hidden" name="ID_AULA" value="<?php echo $Filas['ID_AULA'] ?>">
+        <input type="hidden" name="ID_AULA" value="<?php echo $Filas['ID_AULA'] ?>" required>
             <div class="row">
                     <div class="col-md-6 mb-3">
                         <label>Bloque:</label><br>   
@@ -104,7 +104,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
                     <div class="col-md-6 mb-3">
 
                     <label>Disponibilidad:</label><br>
-                    <select name="DISPONIBILIDAD" class="form-control">
+                    <select name="DISPONIBILIDAD" class="form-control" required>
                     <option value="<?php echo $Filas['DISPONIBILIDAD'] ?>" disabled selected hidden><?php echo $Filas['DESCRIPCION'] ?></option>
                         <?php 
                             $Query = "SELECT * FROM DISPONIBILIDAD";

@@ -36,7 +36,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="contenedor">
             <div id="marca">
 
-            <h1><span class="resaltado"> Poli </span> Dynamics</h1>
+            <h1 style="font-size: 25px;margin-top: 3px;margin-left: -2px;"><span class="resaltado"> Poli </span> Dynamics</h1>
         </div>
 
         <nav>
