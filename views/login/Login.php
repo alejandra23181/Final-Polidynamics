@@ -77,9 +77,7 @@ $username = mysqli_real_escape_string($link,$_POST['username']);
         <div class="contenedor">
             <div id="marca">
 
-            <h1 style="
-    color: white;
-"><span class="resaltado"> Poli </span> Dynamics</h1>
+            <h1 style="color: white;font-size: 25px;margin-top: 3px;margin-left: -2px;"><span class="resaltado"> Poli </span> Dynamics</h1>
         </div>
 
         <nav>
@@ -118,5 +116,9 @@ $username = mysqli_real_escape_string($link,$_POST['username']);
             </div>
         </form>
     </div>    
+
+    <footer>
+        <p>Poli Dynamics &copy; Software institucional </p>
+    </footer>
 </body>
 </html>
