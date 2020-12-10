@@ -29,12 +29,12 @@
 
         <nav>
             <ul>
-            <li class="actual"><a href="\PoliDynamics\Index.php">Inicio</a></li>
+            <li><a href="\PoliDynamics\Index.php">Inicio</a></li>
                 <li><a href="\PoliDynamics\secciones\nosotros.php">Acerca de nosotros</a></li>
                 <li class="actual"><a href="\PoliDynamics\secciones\servicios.php">Nuestros servicios</a></li>
                 <li><a href="\PoliDynamics\secciones\clientes.php">A quien servimos</a></li>
                 <li><a href="\PoliDynamics\secciones\disponibilidad.php">Disponibilidad aulas</a></li>
-                <li class="actual"><a href="\PoliDynamics\views\login\Login.php">Inicio de sesión</a></li>
+                <li><a href="\PoliDynamics\views\login\Login.php">Inicio de sesión</a></li>
             </ul>
         </nav>
         </div>

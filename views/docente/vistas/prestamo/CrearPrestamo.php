@@ -105,6 +105,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
                       
                            </div>
         </div>
+        <input  type="hidden" name="usuario" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>">
 
 
 

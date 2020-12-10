@@ -20,11 +20,17 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         if($fecha_prestamo != null || $fecha_esperada != null || $hora_inicio != null || $hora_fin != null ||
         $usuario != null || $aula != null || $solicitud != null ){
 
+            $usuario1 = mysqli_query($link,"SELECT * FROM USUARIO WHERE username = '".$usuario."'");
+
+            while ($registro = $usuario1->fetch_assoc())
+            {
+                $usuario2 = $registro['ID_USUARIO'];
+            }
             
    
 
             $QuerySQL = "INSERT INTO PRESTAMO (ID_PRESTAMO, FECHA_PRESTAMO, FECHA_PRESTAMO_ESPERADA, HORA_INICIO, HORA_FIN, USUARIO, AULA, SOLICITUD)
-            VALUES (NULL, '".$fecha_prestamo."', '".$fecha_esperada."', '".$hora_inicio."', '".$hora_fin."', '".$usuario."', '".$aula."', '".$solicitud."')";
+            VALUES (NULL, '".$fecha_prestamo."', '".$fecha_esperada."', '".$hora_inicio."', '".$hora_fin."', '".$usuario2."', '".$aula."', '".$solicitud."')";
 
             if (mysqli_query($link,$QuerySQL)){
                 header('location: ../ListarPrestamos.php');
