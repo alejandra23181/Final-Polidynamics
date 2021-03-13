@@ -39,12 +39,12 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
   <nav class="menu">
   <div id="sidebar-nav">   
   <ul id="Secciones">
-    <li ><a href="/PoliDynamics/views/docente/Index.php"> Home</a></li>
+    <li ><a href="/PoliDynamics/views/docente/Index.php"> Inicio</a></li>
       <li ><a href="\PoliDynamics\views\docente\vistas\solicitudes\ListarSolicitudes.php"> Gestión de solicitudes</a></li>
       <li ><a href="\PoliDynamics\views\docente\vistas\ListarTareas.php"> Seguimiento de solicitudes</a></li>
-      <li ><a href="\PoliDynamics\views\docente\vistas\prestamo\ListarPrestamos.php"> Gestión de prestamos</a></li>
+      <li ><a href="\PoliDynamics\views\docente\vistas\prestamo\ListarPrestamos.php"> Gestión de préstamos</a></li>
       <li ><a href="\PoliDynamics\views\docente\vistas\ListarDisponibilidad.php"> Disponibilidad</a></li>
-      <li class="active"><a href="\PoliDynamics\views\docente\vistas\ListarAuditoria.php"> Auditoria</a></li>
+      <li class="active"><a href="\PoliDynamics\views\docente\vistas\ListarAuditoria.php"> Auditoría</a></li>
       <li ><a href="\PoliDynamics\views\docente\vistas\ListarReportes.php"> Reportes</a></li>
       <li><a href="\PoliDynamics\views\docente\vistas\ManualUsuario.php"> Manual de usuario</a></li>     
       <li><a href="\PoliDynamics\Index.php"> Cerrar sesión</a></li>

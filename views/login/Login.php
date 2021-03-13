@@ -85,7 +85,7 @@ $username = mysqli_real_escape_string($link,$_POST['username']);
             <li ><a href="\PoliDynamics\Index.php">Inicio</a></li>
                 <li><a href="\PoliDynamics\secciones\nosotros.php">Acerca de nosotros</a></li>
                 <li><a href="\PoliDynamics\secciones\servicios.php">Nuestros servicios</a></li>
-                <li ><a href="\PoliDynamics\secciones\clientes.php">A quien servimos</a></li>
+                <li ><a href="\PoliDynamics\secciones\clientes.php">A quién servimos</a></li>
                 <li><a href="\PoliDynamics\secciones\disponibilidad.php">Disponibilidad aulas</a></li>
                 <li class="actual"><a href="\PoliDynamics\views\login\Login.php">Inicio de sesión</a></li>
             </ul>
