@@ -85,11 +85,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label>Detalle de reporte:</label><br>   
+                        <label>Detalle de reporte*:</label><br>   
                         <input type="text" class="form-control" name="detalle" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                    <label>Recomendaciones:</label><br>   
+                    <label>Recomendaciones*:</label><br>   
                         <input type="textarea" class="form-control" name="recomendaciones" required>
                     </div>
             </div>
@@ -98,12 +98,12 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label>Fecha inicio:</label><br>   
+                        <label>Fecha inicio*:</label><br>   
                         <input type="date" name="fechainicio"  class="form-control" value="<?php echo date("Y-m-d");?>" required>
                     </div>
 
                     <div class="col-md-6 mb-3">
-                        <label>Hora inicio:</label><br>   
+                        <label>Hora inicio*:</label><br>   
                         <input type="time" name="horainicio"  class="form-control" required>
                     </div>
             </div>
@@ -113,12 +113,12 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label>Hora fin:</label><br>   
+                    <label>Hora fin*:</label><br>   
                     <input type="time" name="horafin"  class="form-control" required>
                 </div>
 
             <div class="col-md-6 mb-3">
-                <label>Solicitud:</label><br>
+                <label>Solicitud*:</label><br>
                 <select name="solicitud" class="form-control" required>
                     <?php 
                         $Query = "SELECT ID_SOLICITUD, DESCRIPCION FROM SOLICITUD";
@@ -138,7 +138,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                 <div class="col-md-6 mb-3" style="margin-left: -166px;width: 504px;">
-                    <label>Tipo de tarea:</label><br>   
+                    <label>Tipo de tarea*:</label><br>   
                     <select name="tipotarea" class="form-control" required>
                     <?php 
                         $Query = "SELECT ID_TIPO_TAREA, DESCRIPCION_TAREA FROM TIPO_TAREA";

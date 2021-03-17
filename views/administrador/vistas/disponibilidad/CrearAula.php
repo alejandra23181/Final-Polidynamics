@@ -84,11 +84,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label>Número aula:</label><br>   
+                        <label>Número aula*:</label><br>   
                         <input type="text" class="form-control" name="NUMERO_AULA" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label>Bloque:</label><br>   
+                        <label>Bloque*:</label><br>   
                         <input type="number" class="form-control" name="BLOQUE" required>
                     </div>
             </div>
@@ -99,7 +99,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
             
                     <div class="col-md-6 mb-3">
-                        <label>Disponibilidad:</label><br>   
+                        <label>Disponibilidad*:</label><br>   
                         <select name="DISPONIBILIDAD" class="form-control">
                     <?php 
                         $Query = "SELECT * FROM DISPONIBILIDAD";

@@ -87,11 +87,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <input type="hidden" name="ID_AULA" value="<?php echo $Filas['ID_AULA'] ?>" required>
             <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label>Bloque:</label><br>   
+                        <label>Bloque*:</label><br>   
                         <input type="text" class="form-control" name="BLOQUE" value="<?php echo $Filas['BLOQUE'] ?>">   
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label>Número aula:</label><br>   
+                        <label>Número aula*:</label><br>   
                         <input type="text" name="NUMERO_AULA"  class="form-control" value="<?php echo $Filas['NUMERO_AULA'] ?>">
 
                     </div>
@@ -103,7 +103,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
                                        
                     <div class="col-md-6 mb-3">
 
-                    <label>Disponibilidad:</label><br>
+                    <label>Disponibilidad*:</label><br>
                     <select name="DISPONIBILIDAD" class="form-control" required>
                     <option value="<?php echo $Filas['DISPONIBILIDAD'] ?>" disabled selected hidden><?php echo $Filas['DESCRIPCION'] ?></option>
                         <?php 

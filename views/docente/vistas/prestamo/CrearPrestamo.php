@@ -82,11 +82,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label>Fecha prestamo:</label><br>   
+                        <label>Fecha prestamo*:</label><br>   
                         <input type="date" name="fecha_prestamo"  class="form-control" value="<?php echo date("Y-m-d");?>" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label>Fecha esperada prestamo:</label><br>   
+                        <label>Fecha esperada prestamo*:</label><br>   
                         <input type="date" name="fecha_esperada"  class="form-control" value="<?php echo date("Y-m-d");?>" required>
                     </div>
             </div>
@@ -95,11 +95,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                    <label>Hora inicio:</label><br>   
+                    <label>Hora inicio*:</label><br>   
                     <input type="time" class="form-control" name="hora_inicio" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                    <label>Hora fin:</label><br>   
+                    <label>Hora fin*:</label><br>   
                     <input type="time" class="form-control" name="hora_fin" required>
                     </div>
                       
@@ -112,7 +112,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                    <label>Aula:</label><br>
+                    <label>Aula*:</label><br>
                     <select name="aula" class="form-control">
                         <option value="0">Seleccione una de las opciones:</option>
                         <?php 
@@ -125,7 +125,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
                     </select>
                     </div>
                     <div class="col-md-6 mb-3">
-                    <label>Solicitud:</label><br>
+                    <label>Solicitud*:</label><br>
                     <select name="solicitud" class="form-control">
                         <option value="0">Seleccione una de las opciones:</option>
                         <?php 

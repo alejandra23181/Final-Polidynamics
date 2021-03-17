@@ -86,11 +86,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label>Descripcion:</label><br>   
+                        <label>Descripcion*:</label><br>   
                         <input type="text" class="form-control" name="descripcion" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label>Fecha esperada:</label><br>   
+                        <label>Fecha esperada*:</label><br>   
                         <input type="date" name="fecha"  class="form-control" value="<?php echo date("Y-m-d");?>" required>
                     </div>
             </div>
@@ -99,7 +99,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                    <label>Hora esperada:</label><br>   
+                    <label>Hora esperada*:</label><br>   
                     <input type="time" class="form-control" name="hora" required>
                     </div>
                     <input  type="hidden" name="usuario" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>">
@@ -108,7 +108,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
                     <label>Categoria:</label><br>
                     <select name="categoria" class="form-control" required>
-                        <option value="0">Seleccione una de las opciones:</option>
+                        <option value="0">Seleccione una de las opciones*:</option>
                         <?php 
                             $Query = "SELECT ID_CATEGORIA, DESCRIPCION_CATEGORIA FROM CATEGORIA";
                             $Resultado = mysqli_query($link, $Query);
@@ -125,7 +125,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                    <label>Aula:</label><br>
+                    <label>Aula*:</label><br>
                     <select name="aula" class="form-control" required>
                         <option value="0">Seleccione una de las opciones:</option>
                         <?php 
@@ -138,7 +138,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
                     </select>
                     </div>
                     <div class="col-md-6 mb-3">
-                    <label>Estado:</label><br>
+                    <label>Estado*:</label><br>
                     <select name="estado" class="form-control" required>
                         <?php 
                             $Query = "SELECT ID_ESTADO, DESCRIPCION_ESTADO FROM ESTADO WHERE ID_ESTADO = 1";

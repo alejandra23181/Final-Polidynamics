@@ -83,11 +83,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <input type="hidden" name="idinventario" value="<?php echo $Filas['ID_INVENTARIO'] ?>" >
             <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label>Referencia:</label><br>   
+                        <label>Referencia*:</label><br>   
                         <input type="text" class="form-control" name="referencia" value="<?php echo $Filas['REFERENCIA'] ?>" required>   
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label>Cantidad:</label><br>   
+                        <label>Cantidad*:</label><br>   
                         <input type="number" class="form-control" name="cantidad" value="<?php echo $Filas['CANTIDAD'] ?>" required>
 
                     </div>
@@ -97,7 +97,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                    <label>Detalle entrada:</label><br>   
+                    <label>Detalle entrada*:</label><br>   
                     <input type="text" class="form-control" name="detalle_entrada" value="<?php echo $Filas['DETALLE_ENTRADA'] ?>" required>
            </div>
     <br>

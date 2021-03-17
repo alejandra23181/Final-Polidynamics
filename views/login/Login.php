@@ -98,7 +98,7 @@ $username = mysqli_real_escape_string($link,$_POST['username']);
     margin-top: 100px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    color: #196F3D;font-weight: bold;">Inicio de sesión</h1>
+    color: #196F3D;font-weight: bold;">Inicio de sesión*</h1>
     <div class="container" style="margin-top: -140px;">
         <form  class="form-signin" method="post">
             <div class="form-group ">
@@ -107,7 +107,7 @@ $username = mysqli_real_escape_string($link,$_POST['username']);
                 <span class="help-block"></span>
             </div>    
             <div class="form-group ">
-                <label>Clave:</label>
+                <label>Clave*:</label>
                 <input type="password"   name="password" class="form-control" require>
                 <span class="help-block"></span>
             </div>
