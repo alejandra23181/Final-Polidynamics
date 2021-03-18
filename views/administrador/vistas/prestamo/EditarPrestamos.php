@@ -97,11 +97,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                     <div class="col-md-6 mb-3">
                     <label>Hora inicio*:</label><br>   
-                    <input type="time" name="hora_inicio" class="form-control" value="<?php echo $Filas['HORA_INICIO'] ?>" required>
+                    <input type="time" max="22:00:00" min="06:00:00" step="1" name="hora_inicio" class="form-control" value="<?php echo $Filas['HORA_INICIO'] ?>" required>
                     </div>
                     <div class="col-md-6 mb-3">
                     <label>Hora fin*:</label><br>   
-                    <input type="time" name="hora_fin" class="form-control" value="<?php echo $Filas['HORA_FIN'] ?>" required>
+                    <input type="time" max="22:00:00" min="06:00:00" step="1" name="hora_fin" class="form-control" value="<?php echo $Filas['HORA_FIN'] ?>" required>
                     </div>
                     <input  type="hidden" name="usuario" value="<?php echo $Filas['username'] ?>">
             </div>

@@ -104,7 +104,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
                     <div class="col-md-6 mb-3">
                         <label>Hora inicio*:</label><br>   
-                        <input type="time" name="horainicio"  class="form-control" required>
+                        <input type="time" max="22:00:00" min="06:00:00" step="1" name="horainicio"  class="form-control" required>
                     </div>
             </div>
         </div>
@@ -114,7 +114,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label>Hora fin*:</label><br>   
-                    <input type="time" name="horafin"  class="form-control" required>
+                    <input type="time" max="22:00:00" min="06:00:00" step="1" name="horafin"  class="form-control" required>
                 </div>
 
             <div class="col-md-6 mb-3">

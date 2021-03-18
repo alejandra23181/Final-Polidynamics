@@ -99,11 +99,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                     <div class="col-md-6 mb-3">
                     <label>Hora inicio*:</label><br>   
-                    <input type="time" class="form-control" name="hora_inicio" required>
+                    <input type="time" max="22:00:00" min="06:00:00" step="1" class="form-control" name="hora_inicio" required>
                     </div>
                     <div class="col-md-6 mb-3">
                     <label>Hora fin*:</label><br>   
-                    <input type="time" class="form-control" name="hora_fin" required>
+                    <input type="time" max="22:00:00" min="06:00:00" step="1" class="form-control" name="hora_fin" required>
                     </div>
                     <input  type="hidden" name="usuario" value="<?php echo htmlspecialchars($_SESSION["username"]); ?>">            </div>
         </div>

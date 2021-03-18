@@ -102,7 +102,7 @@ $username = mysqli_real_escape_string($link,$_POST['username']);
     <div class="container" style="margin-top: -140px;">
         <form  class="form-signin" method="post">
             <div class="form-group ">
-                <label>Usuario:</label>
+                <label>Usuario*:</label>
                 <input type="text" name="username"  class="form-control" require>
                 <span class="help-block"></span>
             </div>    

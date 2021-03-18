@@ -101,7 +101,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <div class="row">
                     <div class="col-md-6 mb-3">
                     <label>Hora esperada:</label><br>   
-                    <input type="time" name="hora" class="form-control" value="<?php echo $Filas['HORA'] ?>">
+                    <input type="time" name="hora" max="22:00:00" min="06:00:00" step="1" class="form-control" value="<?php echo $Filas['HORA'] ?>">
                     </div>
                     <input  type="hidden" name="usuario" value="<?php echo $Filas['username'] ?>">
 
