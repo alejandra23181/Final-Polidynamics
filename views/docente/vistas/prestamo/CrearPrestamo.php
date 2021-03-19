@@ -19,8 +19,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
     $Query = "SELECT *
     FROM PRESTAMO PR
     INNER JOIN USUARIO US ON PR.USUARIO = US.ID_USUARIO
-    INNER JOIN AULA AU ON PR.AULA = AU.ID_AULA
-    INNER JOIN SOLICITUD SO ON PR.SOLICITUD = SO.ID_SOLICITUD WHERE username = '".$_SESSION['username']."'";
+    INNER JOIN AULA AU ON PR.AULA = AU.ID_AULA WHERE username = '".$_SESSION['username']."'";
     $Resultado = mysqli_query($link, $Query);
 ?>
  
@@ -82,11 +81,11 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label>Fecha inicio*:</label><br>   
-                        <input type="date" name="fecha_prestamo"  class="form-control" value="<?php echo date("Y-m-d");?>" required>
+                        <label>Fecha inicial*:</label><br>   
+                        <input type="date" name="fecha_prestamo"  class="form-control" value="<?php echo date("Y-m-d");?>" readonly>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label>Fecha esperada prestamo*:</label><br>   
+                        <label>Fecha prestamo*:</label><br>   
                         <input type="date" name="fecha_esperada"  class="form-control" value="<?php echo date("Y-m-d");?>" required>
                     </div>
             </div>
@@ -112,7 +111,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <div class="form-group">
             <div class="row">
                     <div class="col-md-6 mb-3">
-                    <label>Aula*:</label><br>
+                    <label>Aula:</label><br>
                     <select name="aula" class="form-control">
                         <option value="0">Seleccione una de las opciones:</option>
                         <?php 
@@ -120,19 +119,6 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
                             $Resultado = mysqli_query($link, $Query);
                             while($Filas = $Resultado->fetch_assoc()){
                                 echo '<option value="'.$Filas[ID_AULA].'">'.$Filas[NUMERO_AULA].'</option>';   
-                            }
-                        ?>
-                    </select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                    <label>Solicitud*:</label><br>
-                    <select name="solicitud" class="form-control">
-                        <option value="0">Seleccione una de las opciones:</option>
-                        <?php 
-                            $Query = "SELECT ID_SOLICITUD, DESCRIPCION FROM SOLICITUD";
-                            $Resultado = mysqli_query($link, $Query);
-                            while($Filas = $Resultado->fetch_assoc()){
-                                echo '<option value="'.$Filas[ID_SOLICITUD].'">'.$Filas[DESCRIPCION].'</option>';   
                             }
                         ?>
                     </select>
